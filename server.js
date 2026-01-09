@@ -145,8 +145,14 @@ app.post("/forgot", async (req, res) => {
   res.json({ ok: true });
 });
 
+// ROOT ROUTE FIX
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/public/index.html"));
+});
+
 /* ================= START ================= */
 
 app.listen(PORT, () => {
   console.log("✅ Server running at http://localhost:" + PORT);
+
 });
