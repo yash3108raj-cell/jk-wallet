@@ -1,25 +1,26 @@
-
-/* ===============================
-   SIMPLE CAPTCHA (NO BACKEND)
-================================ */
-
-let num1 = 0;
-let num2 = 0;
+let cid = "";
 let correctAns = 0;
 
+// generate captcha (frontend)
 function generateCaptcha() {
-  num1 = Math.floor(Math.random() * 10) + 1;
-  num2 = Math.floor(Math.random() * 10) + 1;
-  correctAns = num1 + num2;
+  const n1 = Math.floor(Math.random() * 10) + 1;
+  const n2 = Math.floor(Math.random() * 10) + 1;
+  correctAns = n1 + n2;
 
-  document.getElementById("q").innerText = ${num1} + ${num2} = ?;
+  const q = document.getElementById("q");
+  if (q) q.innerText = ${n1} + ${n2} = ?;
+}
 
-
-// IMPORTANT: make login global
+// expose login globally
 window.login = function () {
   const m = document.getElementById("m");
   const p = document.getElementById("p");
   const a = document.getElementById("a");
+
+  if (!m  !p  !a) {
+    alert("Input elements missing");
+    return;
+  }
 
   if (!m.value  !p.value  !a.value) {
     alert("Please fill all fields");
@@ -28,8 +29,8 @@ window.login = function () {
 
   if (Number(a.value) !== correctAns) {
     alert("Captcha incorrect");
-    generateCaptcha();
     a.value = "";
+    generateCaptcha();
     return;
   }
 
@@ -40,6 +41,4 @@ window.login = function () {
   window.location.href = "dashboard.html";
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  generateCaptcha();
-});
+document.addEventListener("DOMContentLoaded", generateCaptcha);
