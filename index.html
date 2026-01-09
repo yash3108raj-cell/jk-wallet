@@ -54,7 +54,7 @@
   </div>
 
   <!-- Button -->
-  <button class="login-btn" onclick="login()">Sign in with Account</button>
+  <button class="login-btn" onclick="login()" type="button" >Sign in with Account</button>
  
 <div class="register-box">
   <span>Don't have an account?</span>
@@ -74,25 +74,30 @@
 </div>
 
 <script>
-let cid="";
-fetch("/captcha")
-  .then(r=>r.json())
-  .then(d=>{
-    cid=d.id;
-    document.getElementById("q").innerText=d.q;
-  });
+function login() {
+  const mobile = document.getElementById("m").value.trim();
+  const password = document.getElementById("p").value.trim();
+  const ans = document.getElementById("a").value.trim();
 
-function login(){
-  fetch("/login",{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({
-      mobile: m.value,
-      password: p.value,
-      cid: cid,
-      ans: a.value
-    })
-  })
+  // Basic validation
+  if (!mobile || !password) {
+    alert("Enter mobile & password");
+    return;
+  }
+
+  // Captcha check
+  if (ans != "10") {
+    alert("Captcha incorrect");
+    return;
+  }
+
+  // ✅ DEMO LOGIN (hosting safe)
+  localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("userMobile", mobile);
+
+  // redirect
+  window.location.href = "dashboard.html";
+}
   .then(r=>r.json())
   .then(d=>{
     if(d.ok){
@@ -120,4 +125,5 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 </body>
+
 </html>
