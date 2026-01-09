@@ -7,7 +7,6 @@ let num1 = 0;
 let num2 = 0;
 let correctAns = 0;
 
-// generate captcha
 function generateCaptcha() {
   num1 = Math.floor(Math.random() * 10) + 1;
   num2 = Math.floor(Math.random() * 10) + 1;
@@ -16,8 +15,8 @@ function generateCaptcha() {
   document.getElementById("q").innerText = ${num1} + ${num2} = ?;
 }
 
-// LOGIN FUNCTION (GLOBAL)
-function login() {
+// IMPORTANT: make login global
+window.login = function () {
   const m = document.getElementById("m");
   const p = document.getElementById("p");
   const a = document.getElementById("a");
@@ -34,15 +33,13 @@ function login() {
     return;
   }
 
-  // ✅ SUCCESS (demo login)
+  // demo login success
   localStorage.setItem("isLoggedIn", "true");
   localStorage.setItem("username", m.value);
 
   window.location.href = "dashboard.html";
-}
+};
 
-// ON LOAD
 document.addEventListener("DOMContentLoaded", () => {
   generateCaptcha();
 });
-
