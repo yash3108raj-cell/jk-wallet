@@ -391,6 +391,10 @@
 <script src="dashboard.js"></script>
 
 <script>
+if (localStorage.getItem("isLoggedIn") !== "true") {
+  window.location.href = "index.html";
+}
+  
 function exchangeNow() {
   // Deposit / USDT section show
   const dep = document.getElementById("depositSection");
@@ -422,3 +426,4 @@ function copyUSDT() {
 
 </body>
 </html>
+
