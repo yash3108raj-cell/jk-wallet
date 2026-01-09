@@ -13,7 +13,7 @@ function generateCaptcha() {
   correctAns = num1 + num2;
 
   document.getElementById("q").innerText = ${num1} + ${num2} = ?;
-}
+
 
 // IMPORTANT: make login global
 window.login = function () {
