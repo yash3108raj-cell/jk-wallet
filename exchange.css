@@ -1,0 +1,462 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f8fb;
+  padding: 0px;
+}
+
+/* ===== Rate Card ===== */
+.rate-card {
+  background: linear-gradient(135deg, #4facfe, #00c6ff);
+  color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rate-card h2 {
+  margin: 5px 0 0;
+}
+
+.rate-card .small {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.deposit-btn {
+  background: rgba(255,255,255,0.25);
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* ===== Balance ===== */
+.balance {
+  margin: 12px 5px;
+  color: #666;
+}
+
+.balance span {
+  float: right;
+  color: #ffb400;
+  font-weight: bold;
+}
+
+/* ===== Card Section ===== */
+.card {
+  background: #fff;
+  margin-top: 15px;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.label {
+  color: #666;
+  margin-bottom: 6px;
+}
+
+/* ===== Input ===== */
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+}
+
+/* ===== Quick Amount Buttons ===== */
+.quick {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.quick button {
+  flex: 1;
+  background: #eef4ff;
+  border: none;
+  color: #357aff;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.quick button:hover {
+  background: #dbe7ff;
+}
+
+.limit {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #999;
+}
+
+/* ===== Bank Card ===== */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.change {
+  color: #357aff;
+  cursor: pointer;
+}
+
+.bank-box {
+  border: 1px dashed #ddd;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  color: #999;
+  margin: 12px 0;
+}
+
+/* ===== Buttons ===== */
+.blue-btn,
+.confirm-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #4facfe, #357aff);
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  margin-top: 25px;
+}
+
+.blue-btn:active,
+.confirm-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== Info Box ===== */
+.info {
+  background: #eef5ff;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 14px;
+  color: #357aff;
+  font-size: 14px;
+}
+
+/* ===== Mobile Friendly ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+}
+/* ===== Confirm Exchange Button ===== */
+.confirm-wrap {
+  padding: 20px 16px 100px; /* bottom space for nav */
+}
+
+.confirm-btn {
+  width: 25% ;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4facfe, #357aff);
+  box-shadow: 0 6px 15px rgba(53,122,255,0.35);
+}
+
+.confirm-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== Deposit Button (YesPay Style) ===== */
+.deposit-btn-wrap {
+  padding: 20px 16px 100px; /* bottom space for nav */
+}
+
+.deposit-btn {
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 28px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #4facfe, #357aff);
+  box-shadow: 0 8px 18px rgba(53,122,255,0.35);
+  cursor: pointer;
+}
+
+.deposit-btn:active {
+  transform: scale(0.97);
+}
+.deposit-top {
+  padding: 15px;
+}
+
+.deposit-top-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg,#4facfe,#357aff);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.address-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin: 12px 0;
+}
+
+.qr {
+  width: 220px;
+  margin-top: 15px;
+}
+
+.exchange-btn:disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.exchange-header {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.balance-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: #444;
+}
+
+.bank-select-box {
+  border: 1px dashed #ccc;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.muted {
+  color: #999;
+}
+
+.deposit-btn-small {
+  background: #4da3ff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.deposit-btn-wrap {
+  position: relative;
+  padding: 16px;
+  margin-bottom: 110px; /* bottom nav height */
+}
+
+.deposit-btn {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #4facfe, #00c6fb);
+  color: #fff;
+  border: none;
+}
+
+/* ===== Deposit Section Card ===== */
+#depositSection {
+  margin: 20px;
+  padding: 22px;
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.9),
+    rgba(224,247,250,0.9)
+  );
+  box-shadow:
+    0 20px 40px rgba(0, 188, 212, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  animation: slideUp 0.4s ease;
+}
+
+/* Title */
+#depositSection h3 {
+  margin-bottom: 12px;
+  color: #00bcd4;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* USDT address box */
+.address-box {
+  margin: 12px 0;
+  padding: 14px;
+  border-radius: 14px;
+  background: #ffffff;
+  font-size: 14px;
+  word-break: break-all;
+  text-align: center;
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.08),
+    0 6px 18px rgba(0,0,0,0.12);
+  color: #0a1f44;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.address-box:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.1),
+    0 10px 26px rgba(0,188,212,0.3);
+}
+
+/* QR image */
+.qr-img {
+  display: block;
+  margin: 18px auto;
+  width: 170px;
+  height: 170px;
+  border-radius: 18px;
+  background: #fff;
+  padding: 10px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.25),
+    inset 0 0 0 6px rgba(224,247,250,0.8);
+}
+
+/* Note text */
+#depositSection .note {
+  margin-top: 10px;
+  font-size: 13px;
+  text-align: center;
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* Smooth entry animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.usdt-box {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 20px;
+  box-shadow: 0 12px 30px rgba(0, 188, 212, 0.25);
+  text-align: center;
+}
+
+.usdt-box .label {
+  font-size: 14px;
+  color: #00bcd4;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.address-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e0f7fa;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+#usdtAddress {
+  font-size: 13px;
+  color: #0a1f44;
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: #00bcd4;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 188, 212, 0.45);
+  transition: all 0.25s ease;
+  margin-left: 316;
+}
+
+.copy-btn:hover {
+  transform: translateY(-2px);
+  background: #00acc1;
+}
+
+/* COPY button wrapper */
+.copy-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+/* COPY button style */
+.copy-btn {
+  padding: 12px 36px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 8px 18px rgba(0, 114, 255, 0.35),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.copy-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 22px rgba(0, 114, 255, 0.45),
+    inset 0 2px 6px rgba(255, 255, 255, 0.35);
+}
+
+/* Click effect */
+.copy-btn:active {
+  transform: scale(0.96);
+}
