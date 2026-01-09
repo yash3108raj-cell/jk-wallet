@@ -1,4 +1,11 @@
-let num1, num2, correctAns;
+
+/* ===============================
+   SIMPLE CAPTCHA (NO BACKEND)
+================================ */
+
+let num1 = 0;
+let num2 = 0;
+let correctAns = 0;
 
 // generate captcha
 function generateCaptcha() {
@@ -6,42 +13,36 @@ function generateCaptcha() {
   num2 = Math.floor(Math.random() * 10) + 1;
   correctAns = num1 + num2;
 
-  document.getElementById("q").innerText =
-    num1 + " + " + num2 + " = ?";
+  document.getElementById("q").innerText = ${num1} + ${num2} = ?;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  generateCaptcha();
-
-  // invite code support (unchanged)
-  const params = new URLSearchParams(window.location.search);
-  const invite = params.get("invite");
-  if (invite) {
-    const input = document.getElementById("inviteInput");
-    if (input) input.value = invite;
-  }
-});
-
-// LOGIN FUNCTION
+// LOGIN FUNCTION (GLOBAL)
 function login() {
-  const mobile = document.getElementById("m").value.trim();
-  const password = document.getElementById("p").value.trim();
-  const ans = document.getElementById("a").value.trim();
+  const m = document.getElementById("m");
+  const p = document.getElementById("p");
+  const a = document.getElementById("a");
 
-  if (!mobile  !password  !ans) {
-    alert("All fields required");
+  if (!m.value  !p.value  !a.value) {
+    alert("Please fill all fields");
     return;
   }
 
-  if (Number(ans) !== correctAns) {
+  if (Number(a.value) !== correctAns) {
     alert("Captcha incorrect");
     generateCaptcha();
+    a.value = "";
     return;
   }
 
-  // fake login success (static hosting safe)
+  // ✅ SUCCESS (demo login)
   localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userMobile", mobile);
+  localStorage.setItem("username", m.value);
 
   window.location.href = "dashboard.html";
 }
+
+// ON LOAD
+document.addEventListener("DOMContentLoaded", () => {
+  generateCaptcha();
+});
+
