@@ -19,7 +19,7 @@
   <!-- Logo -->
   <div class="logo">
    
-     <img src="./images/logo-transparent.png" class="top-logo" alt="PE WALLET">
+     <img src="logo-transparent.png" class="top-logo" alt="PE WALLET">
   </div>
 
   <!-- Welcome -->
@@ -73,58 +73,10 @@
 
 </div>
 
-<script>
-function login() {
-  const mobile = document.getElementById("m").value.trim();
-  const password = document.getElementById("p").value.trim();
-  const ans = document.getElementById("a").value.trim();
-
-  // Basic validation
-  if (!mobile || !password) {
-    alert("Enter mobile & password");
-    return;
-  }
-
-  // Captcha check
-  if (ans != "10") {
-    alert("Captcha incorrect");
-    return;
-  }
-
-  // ✅ DEMO LOGIN (hosting safe)
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("userMobile", mobile);
-
-  // redirect
-  window.location.href = "dashboard.html";
-}
-  .then(r=>r.json())
-  .then(d=>{
-    if(d.ok){
-      localStorage.setItem("userPassword", p.value);
-      localStorage.setItem("isLoggedIn", "true"); 
-      window.location.href="dashboard.html";
-    }else{
-      alert(d.msg);
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const invite = params.get("invite");
-
-  if (invite) {
-    const input = document.getElementById("inviteInput");
-    if (input) input.value = invite;
-  }
-});
-
 <script src="login.js"></script>
-
-</script>
 
 </body>
 
 </html>
+
 
